@@ -4,9 +4,7 @@ import { handleBorrarTodo } from "../store/slices/todos/todoSlice";
 import { useDispatch } from "react-redux";
 import TransitionModal from "./Modal";
 import { useState } from "react";
-import { setEditForm, setModal } from "../store/slices/form/formSlice";
-
-
+import { resetForm, setEditForm, setModal } from "../store/slices/form/formSlice";
 
 
 
@@ -27,6 +25,7 @@ const Todo = ({ todo }) => {
   const handleClose = () => {
     setOpen(false);
     dispatch(setModal({ editar: false }));
+    dispatch(resetForm())
   };
  
 
