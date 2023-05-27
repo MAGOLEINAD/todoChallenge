@@ -25,17 +25,18 @@ const ListaTodos = () => {
   
   return (
     <>
-     {todos?.length === 0 ? <Typography variant="h4" mt={5} align="center">Agrega un Todo a la Lista</Typography> : 
+    
     <Container>
-     
+    {todos?.length === 0 ? <Typography variant="h4" mt={5} align="center">Agrega un Todo a la Lista</Typography> : 
       <Box component="div" p={2} mt={1} boxShadow={2} borderRadius={2} sx={{   backgroundColor: 'white' }}>
       {filtroAplicado ? todosFiltrados.map(todo => (
                            <Todo key={todo.id} todo={todo} />))
                            : todos?.map ((todo => <Todo key={todo.id} todo={todo} />))}
       
       </Box>
-      </Container>
+    
     }
+      </Container>
     </>
   );
 };
